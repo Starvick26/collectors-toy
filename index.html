@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booster Vault</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="experience.css">
+  <link rel="stylesheet" href="interactions.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="stylesheet" href="effects.css">
+  <link rel="stylesheet" href="stack.css">
+  <link rel="stylesheet" href="library.css">
+  <link rel="stylesheet" href="unwrapping.css">
+  <link rel="stylesheet" href="foil.css">
+</head>
+<body>
+  <header class="topbar">
+    <div><div class="eyebrow">MTG COLLECTION LAB</div><h1>Booster Vault</h1></div>
+    <nav><button data-view="open" class="nav-button active">Open</button><button data-view="collection" class="nav-button">Collection</button><button data-view="binders" class="nav-button">Binders</button><button data-view="history" class="nav-button">History</button></nav>
+    <div class="header-actions"><button id="exportButton" class="quiet">Export</button><label class="quiet import-label">Import<input id="importInput" type="file" accept="application/json"></label></div>
+  </header>
+  <main>
+    <section id="openView" class="view active">
+      <div class="hero"><div><div class="eyebrow">DIGITAL PACK OPENING</div><h2>Crack a pack. Build your collection.</h2><p>Cards are revealed one at a time, with every opening saved locally.</p></div><div class="hero-stat"><strong id="totalOpened">0</strong><span>boosters opened</span></div></div>
+      <div class="panel controls"><label>Set<select id="setSelect"><option value="">Choose a set…</option></select></label><label>Product<select id="productSelect"><option value="play">Play Booster</option><option value="draft">Draft Booster</option><option value="set">Set Booster</option><option value="collector">Collector Booster</option></select></label><button id="loadSetButton" class="secondary">Load set</button><button id="openButton" class="primary" disabled><span class="button-icon">✦</span> Open booster</button></div>
+      <div id="sourceNote" class="notice">Load a set to begin. Card data comes from Scryfall; booster configuration is shown with its confidence level.</div>
+      <section id="catalogError" class="catalog-error" hidden role="alert"><h3>Set catalog unavailable</h3><p id="catalogErrorMessage"></p><p>In the project folder, run <code>node server.js</code> or <code>npm.cmd start</code>. Stop any older Python/static server on the same port first.</p><button id="retryCatalog" class="secondary">Retry loading sets</button></section>
+      <div id="openingStage" class="opening-stage empty"><div class="pack-mark">✦</div><h3>Your next opening</h3><p>Select a set, then open a booster.</p></div>
+    </section>
+    <section id="collectionView" class="view"><div class="section-heading"><div><div class="eyebrow">YOUR CARDS</div><h2>Collection</h2></div><input id="collectionSearch" class="search" placeholder="Search cards…"></div><div id="collectionStats" class="stat-row"></div><div id="collectionGrid" class="card-grid"></div></section>
+    <section id="bindersView" class="view"><div class="section-heading"><div><div class="eyebrow">ARRANGE YOUR PRINTS</div><h2>Binders</h2></div><button id="newBinderButton" class="primary">New binder</button></div><div id="bindersList" class="binders-layout"></div></section>
+    <section id="historyView" class="view"><div class="section-heading"><div><div class="eyebrow">EVERY OPENING</div><h2>History</h2></div><button id="clearHistoryButton" class="quiet danger">Clear history</button></div><div id="historyList" class="history-list"></div></section>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>

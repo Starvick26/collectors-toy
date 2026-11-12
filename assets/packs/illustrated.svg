@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450" viewBox="0 0 300 450">
+<defs><linearGradient id="foil" x2="1" y2="1"><stop stop-color="#697b98"/><stop offset=".25" stop-color="#17263b"/><stop offset=".65" stop-color="#345057"/><stop offset="1" stop-color="#ad8c50"/></linearGradient><pattern id="crimp" width="6" height="10" patternUnits="userSpaceOnUse"><path d="M2 0V10" stroke="#ffffff44"/></pattern></defs>
+<path d="M15 5H285L280 35V415L285 445H15L20 415V35Z" fill="url(#foil)" stroke="#d2bd85" stroke-width="2"/>
+<path d="M16 6H284V33H16ZM16 417H284V444H16Z" fill="url(#crimp)"/>
+<path d="M150 85L233 220L150 355L67 220Z" fill="none" stroke="#ddbb75" stroke-width="2"/>
+<circle cx="150" cy="220" r="65" fill="#101c2d" stroke="#ddbb75"/>
+<path d="M150 170L162 207L200 220L162 233L150 270L138 233L100 220L138 207Z" fill="#e7c27b"/>
+<text x="150" y="65" fill="#f3e4bf" text-anchor="middle" font-family="Georgia" font-size="21">BOOSTER VAULT</text>
+<text x="150" y="391" fill="#e7d8b3" text-anchor="middle" font-family="sans-serif" font-size="10" letter-spacing="2">ILLUSTRATED PACKAGING</text>
+</svg>

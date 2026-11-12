@@ -1,0 +1,55 @@
+/* Experience layer: clearly separated setup, opening table and collection. */
+body { background: radial-gradient(ellipse at 15% 0%, #26312f55, transparent 45%), #0c1016; }
+.topbar { border-bottom-color: #e5b85c22; box-shadow: 0 4px 25px #0003; }
+.hero { padding: 28px 0 36px; }
+.hero h2 { max-width: 670px; font-size: clamp(30px, 4vw, 48px); line-height: 1.15; }
+.hero-stat { padding: 18px 24px; border-left: 1px solid #e5b85c44; }
+.controls { border-top: 2px solid #e5b85c66; box-shadow: 0 12px 30px #0003; }
+.cart-panel { display: block; }
+.queue-product-icon { flex: 0 0 40px; }
+.primary { box-shadow: 0 3px 15px #e5b85c15; }
+.primary, .secondary, .nav-button { transition: background .18s, box-shadow .18s; min-height: 44px; }
+.opening-stage { position: relative; min-height: 540px; border: 1px solid #455345; background: radial-gradient(ellipse at center, #253c37 0%, #172923 45%, #111d1b 100%); box-shadow: inset 0 0 100px #0005, 0 20px 55px #0004; overflow: hidden; }
+.opening-stage.empty { background: radial-gradient(ellipse at center, #20312d, #111d1b); }
+.opening-stage.empty h3 { color: var(--text); font: 26px Georgia, serif; margin-bottom: 10px; }
+.opening-stage.empty p { max-width: 330px; }
+.stage-card { gap: 50px; padding: 40px; }
+.stage-card .card-image { padding: 0; }
+.stage-card .card-image img { display: block; }
+.card-details h3 { font-size: 32px; line-height: 1.2; }
+.card-details .progress { letter-spacing: .12em; font-size: 10px; color: #b0c4b8; }
+.card-details .tag { background: #ffffff10; border: 1px solid #ffffff16; }
+.reveal-actions { flex-wrap: wrap; }
+.reveal-strip { padding: 12px; background: #0003; border-radius: 10px; min-height: 85px; }
+.reveal-strip img { object-fit: contain; }
+.collection-card { box-shadow: 0 8px 20px #0003; transition: border-color .2s; }
+.collection-card:hover { border-color: #e5b85c88; }
+.collection-card .card-copy { padding: 12px; }
+.collection-card .card-copy b { white-space: normal; line-height: 1.35; min-height: 32px; }
+.stat { flex: 1; min-width: 130px; border-top: 2px solid #e5b85c66; }
+.stat strong { font: 30px Georgia, serif; color: var(--gold); }
+.binder { background: linear-gradient(100deg, #242832, #171b24); padding: 28px; }
+.binder-slots { grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 620px; margin: 25px auto; gap: 15px; }
+.binder-slot { padding: 5px; border: 1px solid #ffffff18; box-shadow: inset 0 0 15px #0008; background: #10131a; }
+.binder-slot img { border-radius: 5px; }
+.history-item { padding: 22px; border-left: 2px solid #e5b85c66; }
+.history-cards { padding-bottom: 8px; }
+.history-cards img { width: 82px; }
+.summary-cards { padding-bottom: 15px; scroll-snap-type: x mandatory; }
+.summary-cards > div { scroll-snap-align: start; }
+.summary h2 { font-size: 28px; }
+.notice { line-height: 1.65; }
+@media (max-width: 760px) {
+  .hero { padding-top: 0; }
+  .hero-stat { padding: 5px 0 5px 15px; }
+  .controls label { min-width: 100%; }
+  .controls > button { flex: 1; }
+  .stage-card { gap: 25px; padding: 25px; }
+  .cart-inputs label { min-width: 100%; }
+  .cart-inputs > button { width: 100%; }
+  .history-header { flex-wrap: wrap; gap: 15px; }
+  .binder { padding: 16px; }
+  .binder-slots { gap: 8px; }
+  .opening-stage { min-height: 460px; }
+}
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

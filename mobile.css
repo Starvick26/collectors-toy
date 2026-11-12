@@ -1,0 +1,49 @@
+/* Last in the cascade: scroll first, explicitly opt in to touch placement. */
+.sorting-pocket, .tray-card, .binder-slot {
+  touch-action: pan-y pinch-zoom;
+}
+.sorting-workspace.arrange-mode .sorting-pocket:has(img),
+.sorting-workspace.arrange-mode .tray-card {
+  touch-action: none;
+}
+.arrange-toolbar { display: flex; align-items: center; gap: 15px; margin-bottom: 16px; }
+.arrange-toolbar p { color: var(--muted); font-size: 12px; flex: 1; }
+.arrange-toggle[aria-pressed="true"] { color: var(--gold); border-color: var(--gold); }
+.opening-card-heading { grid-column: 1 / -1; text-align: center; color: var(--muted); font-size: 11px; }
+.opening-product-name { margin-bottom: 5px; }
+.opening-card-heading .progress { font-size: 11px; letter-spacing: .1em; }
+@media (min-width: 761px) {
+  .opening-card-heading { margin-bottom: -25px; }
+}
+@media (max-width: 760px) {
+  .opening-stage { overflow: visible; min-height: 0; }
+  .opening-stage .stage-card {
+    display: flex; flex-direction: column; align-items: stretch;
+    gap: 16px; width: 100%; padding: 18px 12px;
+  }
+  .opening-stage .stage-card .card-image {
+    width: min(100%, 420px, calc(64dvh * .7143));
+    max-width: none; margin: 0 auto; align-self: center;
+  }
+  .opening-stage .stage-card .card-image img { width: 100%; height: auto; }
+  .card-details { width: 100%; text-align: center; }
+  .card-details h3 { font-size: 23px; margin: 0 0 8px; }
+  .card-details .price { margin-top: 8px; }
+  .card-details .notice { font-size: 10px; margin: 5px 0; }
+  .reveal-actions { justify-content: center; gap: 6px; margin-top: 12px; padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .reveal-actions > button { min-height: 44px; }
+  .gesture-hint { font-size: 10px; }
+  .reveal-strip { min-height: 0; }
+  .binder-dock.visible { top: auto; bottom: 18px; width: 155px; max-height: 100px; font-size: 11px; opacity: .9; }
+  .binder-dock h3 { font-size: 13px; }
+  .binder-dock div { display: none; }
+  .sorting-layout { grid-template-columns: minmax(0, 1fr); }
+  .card-tray { grid-template-columns: repeat(auto-fill,minmax(85px,1fr)); max-height: 230px; }
+  .arrange-toolbar { align-items: start; flex-direction: column; gap: 8px; }
+  .arrange-toolbar button { width: 100%; }
+}
+@media (max-width: 760px) and (orientation: landscape) and (max-height: 500px) {
+  .opening-stage .stage-card { display: grid; grid-template-columns: minmax(140px, .8fr) 1fr; align-items: center; }
+  .opening-card-heading { grid-column: 1 / -1; }
+  .opening-stage .stage-card .card-image { width: min(100%,calc(70dvh * .7143)); }
+}
