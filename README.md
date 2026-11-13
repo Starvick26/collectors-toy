@@ -1,6 +1,6 @@
 # Collectors Toy — GitHub Pages edition
 
-Static snapshot containing 12 prepared MTG sets. No Node API is required at runtime.
+Static snapshot containing 22 prepared MTG sets. No Node API is required at runtime.
 
 Enable **Settings → Pages → Source → GitHub Actions** in this repository, then run the Publish GitHub Pages workflow (or push to main).
 
